@@ -94,3 +94,4 @@ Accept the canister overwrite with 'yes'. Now call the canister with some JavaSc
 ```
 
 You should now in the console window see the result of the code execution.
+
