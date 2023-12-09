@@ -16,7 +16,7 @@ You can proceed by either creating this project from scratch or by cloning this 
 ## Creating the Project from Scratch
 
 * Create the project using `dfx new --type rust --no-frontend demo4`
-* Navigate to the folder: `demo4/src/demo4_backend`
+* Navigate to the backend folder: `cd demo4/src/demo4_backend`
 * Add the Boa engine dependency: `cargo add boa_engine`
 * Add the ic_polyfill dependency: `cargo add ic-wasi-polyfill`
 
@@ -51,11 +51,11 @@ fn init() {
 ```
 
 
-## Deployment and testing
+## Deployment and Testing
 
 Start the `dfx` environment in a separate console:
 ```
-  dfx start
+  dfx start --clean
 ```
 This window will show you the communication with your canister.
 
@@ -84,7 +84,7 @@ It creates a new file called `no_wasi.wasm`.
 before deploying it, you need to compress it `gzip no_wasi.wasm`. Now you can deploy it manually:
 
 ```bash
-  dfx canister install --mode reinstall --wasm no_wasi.gzip demo4_backend
+  dfx canister install --mode reinstall --wasm no_wasi.wasm.gz demo4_backend
 ```
 
 Accept the canister overwrite with 'yes'. Now call the canister with some JavaScript code:
