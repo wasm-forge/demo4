@@ -28,3 +28,8 @@ fn init() {
 }
 
 
+#[ic_cdk::post_upgrade]
+fn post_upgrade() {
+    ic_wasi_polyfill::init(&[0u8;32], &[]);
+}
+
